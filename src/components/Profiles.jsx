@@ -1,18 +1,20 @@
+import styles from './Profiles.module.css';
+
 function Profile({ username, tag, location, avatar, stats }) {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt="User avatar" className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
+    <div className={styles.profile}>
+      <div className={styles.description}>
+        <img src={avatar} alt="User avatar" className={styles.avatar} />
+        <p className={styles.name}>{username}</p>
+        <p className={styles.tag}>@{tag}</p>
+        <p className={styles.location}>{location}</p>
       </div>
  
-      <ul className="stats">
+      <ul className={styles.stats}>
         {Object.entries(stats).map(([label, quantity]) => (
           <li key={label}>
-            <span className="label">{label.charAt(0).toUpperCase() + label.slice(1)}</span>
-            <span className="quantity">{quantity}</span>
+            <span className={styles.label}>{label.charAt(0).toUpperCase() + label.slice(1)}</span>
+            <span className={styles.quantity}>{quantity}</span>
           </li>
         ))}
       </ul>
